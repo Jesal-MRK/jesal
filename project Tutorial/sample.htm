@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Sample Login</h1>
+      <input type="text" v-model="username" placeholder="Enter Username" />
+      <input type="password" v-model="password" placeholder="Enter Password" />
+      <button type="button" v-on:click="login">
+        Login
+      </button>
+
+      <div v-if="showInvalid" style="background-color: red; color: white; margin: 10px 0;">
+        Invalid username or password.
+      </div>
+
+      <div v-if="showSuccess" style="background-color: green; color: white; margin: 10px 0;">
+        Login success!
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          username: '',
+          password: '',
+          showInvalid: false,
+          showSuccess: false
+        },
+        methods: {
+          login: function () {
+            if (this.username === 'admin' && this.password === 'admin') {
+              this.showSuccess = true;
+              this.showInvalid = false;
+            }
+            else {
+              this.showSuccess = false;
+              this.showInvalid = true;
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
