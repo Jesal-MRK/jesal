@@ -8,19 +8,31 @@
   </head>
   <body>
     <div id="app">
-      <h1>Sample Login</h1>
-      <input type="text" v-model="username" placeholder="Enter Username" />
-      <input type="password" v-model="password" placeholder="Enter Password" />
-      <button type="button" v-on:click="login">
-        Login
-      </button>
+      <div class="container py-2">
+        <h1>Sample Login</h1>
+        <input type="text"
+               v-model="username"
+               class="form-control mt-2"
+               placeholder="Enter Username" />
 
-      <div v-if="showInvalid" style="background-color: red; color: white; margin: 10px 0;">
-        Invalid username or password.
-      </div>
+        <input type="password"
+               v-model="password"
+               class="form-control mt-2"
+               placeholder="Enter Password" />
 
-      <div v-if="showSuccess" style="background-color: green; color: white; margin: 10px 0;">
-        Login success!
+        <button type="button"
+                v-on:click="login"
+                class="btn btn-primary mt-2">
+          Login
+        </button>
+
+        <div v-if="showInvalid" class="alert alert-danger mt-2">
+          Invalid username or password.
+        </div>
+
+        <div v-if="showSuccess" class="alert alert-success mt-2">
+          Login success!
+        </div>
       </div>
     </div>
     <script>
