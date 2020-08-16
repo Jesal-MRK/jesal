@@ -5,22 +5,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <style>
-        body{
-        margin: 0;
-        padding: 0;
-        background: url(coffee.jpg) no-repeat;
-        font-family: sans-serif;
-        background-size:cover;
-    
-        }
         nav{
             size: 100%;
-            background-color: black;
+            background-color: deepskyblue;
             opacity:80%;
-        }
-        a:hover{
-            background: brown;
-    
+           
+
         }
         .container{
         width: 300px;
@@ -29,30 +19,26 @@
         left: 50%;
         transform: translate(-50%,-50%);
         text-align: center ;
-      
   
         }
         .btn{
             width: 100%;
-            border-color: brown;
-            
         }
-        a{
-            color: blanchedalmond;
-        }
+      
+
+
     </style>
     </head>
     <body>
         <nav class = "nav">
-            <a class="nav-link active"  href="#">Home</a>
-            <a class="nav-link" href="#">History</a>
-            <a class="nav-link" href="#">Contact Us</a>
-            <a class="nav-link default" href="#">About Us</a>
+            <a class="nav-link active"  href="#">Active</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link default" href="#">Disabled</a>
         </nav>
 
     <div id ="app">
         <div class="container py-2">  
-            <h1>Welcome to Coffee.Soap</h1>
                <input type = "text" 
                v-model="showUser"
                placeholder="Enter username" 
@@ -66,7 +52,7 @@
                <button type="button" 
                v-on:click = "verify"
                class="btn btn-outline-primary mt-2" >
-               <font color = "brown">Log in </font>
+               Log in 
             </button>
 
               
