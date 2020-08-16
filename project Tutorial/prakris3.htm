@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>trying with bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <style>
+        nav{
+            size: 100%;
+            background-color: deepskyblue;
+            opacity:80%;
+           
+
+        }
+        .container{
+        width: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center ;
+  
+        }
+        .btn{
+            width: 100%;
+        }
+      
+
+
+    </style>
+    </head>
+    <body>
+        <nav class = "nav">
+            <a class="nav-link active"  href="#">Active</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link default" href="#">Disabled</a>
+        </nav>
+
+    <div id ="app">
+        <div class="container py-2">  
+               <input type = "text" 
+               v-model="showUser"
+               placeholder="Enter username" 
+               class="form-control mt-2">
+
+               <input type = "password" 
+               v-model="showPass"
+               placeholder="Enter your Password" 
+               class="form-control mt-2">
+
+               <button type="button" 
+               v-on:click = "verify"
+               class="btn btn-outline-primary mt-2" >
+               Log in 
+            </button>
+
+              
+               <small id="emailHelp" class="form-text text-muted">If not registered yet please click <a href = "https:www.facebook.com">Register</a></small>
+            </div>  
+               <div v-if="showFail" class="alert alert-danger mt-2">
+                Invalid username or password.
+              </div>
+      
+              <div v-if="showSuccess" class="alert alert-success mt-2">
+                Login success!
+              </div>
+         </div>
+    </div>
+        <script>
+
+    new Vue({
+    el: '#app',
+        data:{
+    showUser: '', 
+    showPass: '',    
+    showSuccess :false, 
+    showFail: false,
+    Register: "www.facebook.com"
+
+    },
+    methods:{
+        verify: function (){
+            if (this.showUser === "toto" && this.showUser === 'toto'){
+                this.showSuccess = true;
+                this.showFail = false;
+                alert ("proceed")
+            
+        } else 
+            {
+            this.showSuccess = false;
+            this.showFail = true;
+         } 
+        }
+    }
+});
+        </script>
+    </body>
+</html>
