@@ -39,6 +39,7 @@
 
     <div id ="app">
         <div class="container py-2">  
+                <h1>Welcome to Coffee.Soap</h1>
                <input type = "text" 
                v-model="showUser"
                placeholder="Enter username" 
@@ -81,7 +82,7 @@
     },
     methods:{
         verify: function (){
-            if (this.showUser === "toto" && this.showUser === "toto"){
+            if (this.showUser === "toto" && this.showPass === "toto"){
                 this.showSuccess = true;
                 this.showFail = false;
                 alert ("proceed")
