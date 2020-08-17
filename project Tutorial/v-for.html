@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+</head>
+<body>
+  <div id="app">
+
+    <ul>
+      <li v-for="item of list">
+        {{ item }}
+      </li>
+
+      <button type="button" @click="addItem">
+        add item
+      </button>
+
+      <button type="button" @click="removeItem">
+        remove item
+      </button>
+    </ul>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        list: [
+          'item 1',
+          'item 2',
+          'item 3',
+          'item 4'
+        ]
+      },
+      methods: {
+        addItem() {
+          this.list.push('new item');
+        },
+        removeItem() {
+          this.list.pop();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
